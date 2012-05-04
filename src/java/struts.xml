@@ -4,7 +4,7 @@
 <struts>
     <package name="public" namespace="/" extends="struts-default">
         <action name="index" class="action.Index">
-            <result>/WEB-INF/rita/exersice1_3.jsp</result>
+            <result>/WEB-INF/rita/exercise1_4.jsp</result>
         </action>
     </package>
 </struts>
