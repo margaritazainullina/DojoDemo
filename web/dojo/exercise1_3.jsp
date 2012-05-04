@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>Fun with Dojo!</title>
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/js/dojoroot/dijit/themes/tundra/tundra.css" />
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/dojoroot/dojo/dojo.js"
-        djConfig="isDebug:true" data-dojo-config="parseOnLoad: true"></script>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dijit/themes/tundra/tundra.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js"
+        data-dojo-config="async: true"></script>
         <style type="text/css">
             .blue {color: blue;}
         </style>
