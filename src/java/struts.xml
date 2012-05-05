@@ -4,11 +4,7 @@
 <struts>
     <package name="public" namespace="/" extends="struts-default">
         <action name="index" class="action.Index">
-<<<<<<< HEAD
-            <result>/WEB-INF/rita/exercise1_4.jsp</result>
-=======
-            <result>/WEB-INF/dojo/sample006.jsp</result>
->>>>>>> 66c4335b15fb544d754545b9897e5471be12b252
+            <result>/WEB-INF/rita/exercise2_6.jsp</result>
         </action>
     </package>
 </struts>
