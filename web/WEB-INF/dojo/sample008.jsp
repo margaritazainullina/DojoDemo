@@ -5,10 +5,8 @@
             @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
         </style>
         <script type="text/javascript">
-            
             var dojoConfig = {
                 async: true, 
-
                 baseUrl: "/dojo/js/",
                 tlmSiblingOfDojo: false,
                 parseOnLoad: true, 
