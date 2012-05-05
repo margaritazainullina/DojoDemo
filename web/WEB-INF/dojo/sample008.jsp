@@ -2,22 +2,24 @@
 <html>
     <head>
         <style type="text/css">
-            @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/claro/claro.css";
+            @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
         </style>
         <script type="text/javascript">
             
             var dojoConfig = {
+                async: true, 
+
                 baseUrl: "/dojo/js/",
                 tlmSiblingOfDojo: false,
-                parseOnLoad: false, 
+                parseOnLoad: true, 
                 packages: [
-                    { name: "dojo", location: "//ajax.googleapis.com/ajax/libs/dojo/1.7.1/" },
-                    { name: "foo", location: "./foo", main: "app" }
+                    { name: "dojo", location: "//ajax.googleapis.com/ajax/libs/dojo/1.7.2/" },
+                    { name: "foo", location: "./foo" }
                 ]
             };
         </script>
         <script type="text/javascript" 
-                src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js"
+                src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js"
                 data-dojo-config="async: true">
         </script>
 
@@ -25,7 +27,7 @@
             require(
             ["dojo/on", "dojo/mouse", "foo/FooModule", "dojo/domReady!"],
             function(on, mouse, FooModule) {
-                on(document.getElementById("d1"), mouse.enter, function(evt){ FooModule(); });
+                on(document.getElementById("d1"), mouse.enter, function(evt){ FooModule.bar(); });
             }
         );            
         </script>        
