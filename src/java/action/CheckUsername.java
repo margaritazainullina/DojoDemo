@@ -13,6 +13,7 @@ public class CheckUsername extends ActionSupport {
 
     private InputStream xmlStream;
     private static List<String> names = new ArrayList<String>();
+    private String username;
 
     static {
         names.add("Rita");
@@ -24,8 +25,14 @@ public class CheckUsername extends ActionSupport {
     }
 
     public String execute() throws Exception {
-        Map parameters = ActionContext.getContext().getParameters();
-        xmlStream = convert("undefined");
+        for (String str : names) {
+            if (username.equals(str)) {
+                xmlStream = convert("undefined");
+                return SUCCESS;
+            }
+        }
+
+        xmlStream = convert("available");
         return SUCCESS;
     }
 
@@ -37,5 +44,9 @@ public class CheckUsername extends ActionSupport {
             e.printStackTrace();
         }
         return is;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

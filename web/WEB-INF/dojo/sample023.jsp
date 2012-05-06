@@ -3,6 +3,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script data-dojo-config="isDebug: true, async: true" 
+                src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
+        </script>
         <script>
             // Require the xhr module
             require(["dojo/_base/xhr", "dojo/on", "dojo/dom", "dojo/dom-class", "dojo/_base/lang", "dojo/domReady!"],
