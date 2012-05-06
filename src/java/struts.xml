@@ -4,9 +4,16 @@
 <struts>
     <package name="public" namespace="/" extends="struts-default">
         <action name="index" class="action.Index">
-            <result>/WEB-INF/dojo/sample022.jsp</result>
+            <result>/WEB-INF/dojo/sample023.jsp</result>
         </action>
         <action name="getAjaxString" class="action.Sample021Ajax">
+            <result name="success" type="stream">
+                <param name="contentType">text/plain</param>
+                <param name="inputName">xmlStream</param>
+                <param name="bufferSize">1024</param>    
+            </result>
+        </action>
+         <action name="checkUsername" class="action.CheckUsername">
             <result name="success" type="stream">
                 <param name="contentType">text/plain</param>
                 <param name="inputName">xmlStream</param>
