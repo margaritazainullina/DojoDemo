@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html>
     <head>
         <style type="text/css">
@@ -9,20 +10,19 @@
         <script type="text/javascript">
             require(["dojo/on", "dojo/_base/xhr", "dojo/dom", "dojo/domReady!"],
             function(on, xhr, dom) {
-                // Using xhr.get, as very little information is being sent
-                xhr.get({
-                    // The URL of the request
-                    url: "getAjaxString.action",
-                    // The success callback with result from server
-                    load: function(newContent) {
-                        dom.byId("contentNode").innerHTML = newContent;
-                    },
-                    // The error handler
-                    error: function() {
-                        // Do nothing -- keep old content there
-                    },
-                    preventCache: true
-                });
+                function refreshContent() {
+                    // Using xhr.get, as very little information is being sent
+                    xhr.get({
+                        // The URL of the request
+                        url: "getAjaxString.action",
+                        // The success callback with result from server
+                        load: function(newContent) {
+                            dom.byId("contentNode").innerHTML = newContent;
+                        },
+                        error: function() {},
+                        preventCache: true
+                    });
+                }
                 refreshContent();
                 // Connect button
                 on(dom.byId("refreshButton"), "click", refreshContent);
