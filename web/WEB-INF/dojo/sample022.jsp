@@ -33,6 +33,3 @@
         <p id="contentNode"></p>
     </body>
 </html>
-
-
-
