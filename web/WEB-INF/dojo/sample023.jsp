@@ -7,13 +7,10 @@
                 src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
         </script>
         <script>
-            // Require the xhr module
             require(["dojo/_base/xhr", "dojo/on", "dojo/dom", "dojo/dom-class", "dojo/_base/lang", "dojo/domReady!"],
             function(xhr, on, dom, domClass, lang) {
-                // Local var representing the node to be updated
                 var availabilityNode = dom.byId("availabilityNode");
                 var usernameNode = dom.byId("usernameInput");
-                // Connect button
                 on(usernameNode, "keyup", function(){
                     // Get the value
                     var value = lang.trim(usernameNode.value.toLowerCase());
