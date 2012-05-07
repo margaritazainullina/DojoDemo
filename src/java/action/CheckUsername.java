@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package action;
 
 import com.opensymphony.xwork2.ActionContext;
