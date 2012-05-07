@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style type="text/css">
+            @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
+        </style>
+        <script data-dojo-config="isDebug: true, async: true" 
+                src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
+        </script>
+        <script>
+            require(["dojo/_base/xhr", "dojo/on", "dojo/dom", "dojo/domReady!"],
+            function(xhr, on, dom) {
+                on(dom.byId("sendForm"), "click", function() {
+                    var resultNode = dom.byId("formResultNode");
+                    xhr.post({
+                        url: "userForm.action",
+                        form: dom.byId("formNode"),
+                        load: function(newContent) {
+                            resultNode.style.display = "block";
+                            resultNode.innerHTML = newContent;
+                        },
+                        error: function() {
+                            resultNode.innerHTML = "Your form could not be sent.";
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Demo: Send Form Data via xhr.post</h1>
+        <p>Click the button below to send the form to the server using xhr.post</p>
+        <form id="formNode">
+            <label class="qhead">Your Name</label>
+            <input type="text" name="name">
+            <br>
+            <label class="qhead">Your Bio</label>
+            <textarea cols="20" rows="5" name="bio"></textarea>
+            <br>
+            <label class="qhead">Your Color</label>
+            <select name="favoriteColor">
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+            </select>
+            <br>
+            <label class="qhead">Dojo User?</label>
+            <input id="dojoUser1" type="radio" value="Yes" name="dojoUser">
+            <label for="dojoUser1">Yes</label>
+            <input id="dojoUser2" type="radio" value="No" name="dojoUser">
+            <label for="dojoUser2">No</label>
+            <br>
+            <label class="qhead">Favorite Days</label>
+            <input id="day1" type="checkbox" value="Sunday" name="favoriteDays[]">
+            <label for="day1">Sunday</label>
+            <input id="day2" type="checkbox" value="Monday" name="favoriteDays[]">
+            <label for="day2">Monday</label>
+            <input id="day3" type="checkbox" value="Tuesday" name="favoriteDays[]">
+            <label for="day3">Tuesday</label>
+            <input id="day4" type="checkbox" value="Wednesday" name="favoriteDays[]">
+            <label for="day4">Wednesday</label>
+            <input id="day5" type="checkbox" value="Thursday" name="favoriteDays[]">
+            <label for="day5">Thursday</label>
+            <input id="day6" type="checkbox" value="Friday" name="favoriteDays[]">
+            <label for="day6">Friday</label>
+            <input id="day7" type="checkbox" value="Saturday" name="favoriteDays[]">
+            <label for="day7">Saturday</label>
+        </form>
+        <div style="margin:2em 0">
+            <button id="sendForm">Send Form</button>
+        </div>
+        <pre id="formResultNode"></pre>
+    </body>
+</html>
