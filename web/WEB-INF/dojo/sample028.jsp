@@ -20,10 +20,7 @@
                 src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
         </script>
         <script type="text/javascript">
-            require(["dojo/dom", "sample/sample028", "dojo/domReady!"],
-            function(sample028) { 
-                sample028.bar();
-            });
+            require(["sample/sample028", "dojo/domReady!"], function(sample028){ sample028.bar(); });
         </script>
         <style type="text/css">
             .div1{
