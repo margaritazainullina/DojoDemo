@@ -15,10 +15,9 @@ public class JsonSample029 extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        String json = "{"
-                + "user1: User One,"
-                + "user2: User Two,"
-                + "user3: User Three}";
+        String json = "[{'id':1,'username':'user1','name':'User One'},"
+                + "{'id':2,'username':'user2','name':'User Two'},"
+                + "{'id':3,'username':'user3','name':'User Three'}]";
         xmlStream = convert(json);
         return SUCCESS;
     }

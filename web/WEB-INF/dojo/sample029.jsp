@@ -1,9 +1,3 @@
-<%-- 
-    Document   : sample029
-    Created on : May 8, 2012, 7:38:18 PM
-    Author     : jrita
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,8 +6,14 @@
         <style type="text/css">
             @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
         </style>
+        
+        <script data-dojo-config="isDebug: true, async: true" 
+                src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
+        </script>        
         <script type="text/javascript">
-            require(["dojo/_base/Deferred", "dojo/_base/xhr", "dojo/_base/array", "dojo/dom-construct", "dojo/dom", "dojo/domReady!"], function(Deferred, xhr, baseArray, domConstruct, dom) {
+            require(["dojo/_base/Deferred", "dojo/_base/xhr", "dojo/_base/array", "dojo/dom-construct", 
+                                                                        "dojo/dom", "dojo/domReady!"], 
+            function(Deferred, xhr, baseArray, domConstruct, dom) {
                 var def = new Deferred(),
                 userlist = dom.byId("userlist");
                 def.then(function(res){
@@ -31,14 +31,8 @@
                 xhr.get({
                     url: "jsonSample029.action",
                     handleAs: "json",
-                    load: function(res){
-                        // Resolve when content is received
-                        def.resolve(res);
-                    },
-                    error: function(err){
-                        // Reject on error
-                        def.reject(err);
-                    }
+                    load: function(res){ def.resolve(res); },
+                    error: function(err){def.reject(err); }
                 });
             });
         </script>
