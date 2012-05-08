@@ -1,5 +1,4 @@
-define(
-    ["dojo/domReady!"],
+define(["dojo/domReady!"],
     function() {
         var ret = {};
         ret.bar = require(["dojo/_base/xhr", "dojo/on", "dojo/dom", "dojo/domReady!"],
@@ -10,7 +9,6 @@ define(
                         url: "userForm.action",
                         form: dom.byId("formNode"),
                         load: function(newContent) {
-                           
                             resultNode.style.display = "block";
                             resultNode.innerHTML = newContent;
                         },
@@ -22,4 +20,4 @@ define(
             });
         return ret;    
     }
-    );
+);
