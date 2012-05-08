@@ -8,12 +8,21 @@ import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 public class UserForm extends ActionSupport {
+
     private InputStream xmlStream;
-    private Map<String, Object> parameters;    
+    private Map<String, Object> parameters;
 
     @Override
     public String execute() throws Exception {
-        xmlStream = convert(getParameterValue("bio"));
+        StringBuilder result = new StringBuilder();
+        result.append("The server received:\n");
+        result.append("name is: ");
+        result.append(getParameterValue("name"));
+        result.append("\n");
+        result.append("bio is: ");
+        result.append(getParameterValue("bio"));
+        result.append("\n");
+        xmlStream = convert(result.toString());
         return SUCCESS;
     }
 
@@ -21,7 +30,8 @@ public class UserForm extends ActionSupport {
         InputStream is = null;
         try {
             is = new ByteArrayInputStream(str.getBytes("UTF-8"));
-        } catch (UnsupportedEncodingException e) {}
+        } catch (UnsupportedEncodingException e) {
+        }
         return is;
     }
 
@@ -40,7 +50,10 @@ public class UserForm extends ActionSupport {
 
     public String getParameterValue(String param) {
         Object paramObj = getParameters().get(param);
-        if (paramObj == null) return null;
-        else return ((String[]) paramObj)[0];
+        if (paramObj == null) {
+            return null;
+        } else {
+            return ((String[]) paramObj)[0];
+        }
     }
 }

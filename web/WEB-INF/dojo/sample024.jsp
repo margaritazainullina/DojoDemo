@@ -25,6 +25,13 @@
                 });
             });
         </script>
+        <style type="text/css">
+            .div1{
+                
+                background: gray;
+                border: 1px solid;
+            }
+        </style>
     </head>
     <body>
         <h1>Demo: Send Form Data via xhr.post</h1>
@@ -65,9 +72,9 @@
             <input id="day7" type="checkbox" value="Saturday" name="favoriteDays[]">
             <label for="day7">Saturday</label>
         </form>
-        <div style="margin:2em 0">
+        <div>
             <button id="sendForm">Send Form</button>
         </div>
-        <pre id="formResultNode"></pre>
+        <pre id="formResultNode" class="div1"></pre>
     </body>
 </html>
