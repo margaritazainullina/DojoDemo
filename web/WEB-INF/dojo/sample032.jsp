@@ -11,7 +11,7 @@
             require(["dojo/_base/xhr", "dojo/_base/array", "dojo/_base/json", "dojo/dom-construct", "dojo/dom", "dojo/domReady!"], 
             function(xhr, baseArray, baseJson, domConstruct, dom) {
                 var original = xhr.get({
-                    url: "jsonSample029.action",
+                    url: "jsonSample032.action",
                     handleAs: "json"
                 });
                 
