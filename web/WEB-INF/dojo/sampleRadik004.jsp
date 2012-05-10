@@ -20,8 +20,8 @@
                 src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
         </script>
         <script>
-            require(["dojo/dom", "sample/Boss"],
-            function(dom, Boss) {
+            require(["dojo/dom", "sample/Boss", "sample/Employee"],
+            function(dom, Boss, Employee) {
                 var kathryn = new Boss("Kathryn", 26, "Minnesota", 9000),
                 matt    = new Employee("Matt", 33, "California", 1000);
 
