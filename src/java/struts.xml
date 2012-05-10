@@ -4,7 +4,7 @@
 <struts>
     <package name="public" namespace="/" extends="struts-default">
         <action name="index" class="action.Index">
-            <result>/WEB-INF/dojo/sampleRita001.jsp</result>
+            <result>/WEB-INF/dojo/sampleRadik002.jsp</result>
         </action>
         <action name="getAjaxString" class="action.Sample021Ajax">
             <result name="success" type="stream">
