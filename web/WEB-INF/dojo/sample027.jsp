@@ -19,26 +19,6 @@
         <script data-dojo-config="isDebug: true, async: true" 
                 src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
         </script>
-        <%--script type="text/javascript">
-         require(["dojo/_base/xhr", "dojo/dom", "recipies/showRecipies",  "dojo/domReady!"],
-         function(xhr, dom, showRecipies) {
-             xhr.get({
-                 url: "getAjaxXML.action",
-                 load: function(response) {
-                     var str = response.toString();
-                     var array = str.split(",");
-                     showRecipies.bar(dom, "foo");
-                     return response;
-                 },
-                 error: function(response) {
-                     console.log("failed xhrGet", response);
-                     return response; //always return the response back
-                 },
-                 preventCache: true
-             });
-         }
-     );  
-</script--%>
         <script>
             require(["dojo/io/script", "dojo/on", "dojo/dom", "dojo/_base/array", "sample/sample027", "dojo/domReady!"],
             function(script, on, dom, arrayUtil) {
