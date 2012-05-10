@@ -1,4 +1,3 @@
-// in my/Alpha.js
 define(['dojo/_base/lang', 'dojo/_base/declare'], function(lang, declare){
   return declare(null, {
     constructor: function(name, age, residence){

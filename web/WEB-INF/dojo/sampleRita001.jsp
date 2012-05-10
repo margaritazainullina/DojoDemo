@@ -20,14 +20,14 @@
                 src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
         </script>
         <script>
-            require(["dojo/dom", "sample/Alpha", "dojo/domReady!"],
-            function(dom, Alpha) {
-                var a1 = new Alpha("phiggins", 42, "Tennessee");
-                console.log(a1.name);
+            require(["dojo/dom", "sample/Demo", "dojo/domReady!"],
+            function(dom, Demo) {
+                var demo  = new Demo();
+                console.log(demo.arr, demo.num, demo.str);
+                console.log(demo.obj.residence);
             });
         </script>
     </head>
     <body>
-        <div id="foo"></div>
     </body>
 </html>

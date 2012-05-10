@@ -1,4 +1,4 @@
-<html>
+ <html>
     <head>
         <style type="text/css">
             @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
