@@ -1,4 +1,4 @@
- <html>
+<html>
     <head>
         <style type="text/css">
             @import "http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css";
@@ -20,19 +20,16 @@
                 src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js">
         </script>
         <script>
-            require(["dojo/dom", "sample/Person", "dojo/domReady!"],
-            function(dom, Person) {
-                var anon  = new Person(),
-                alice = new Person({ name: "Alice", age: 42, residence: "Universe 1", capacity: 10 });
-                console.log(anon.name, alice.name); // "Anonymous", "Alice"
-                console.log(anon.residence, alice.residence); // "Universe A", "Universe 1"
-                alice.moveTo("Universe 420");
-                console.log(alice.capacity);
-                console.log(alice.residence); // "Universe 420"
+            require(["sample/Blizzard", "sample/ingredients"], function(Blizzard){
+                // This will print to console:
+                // "adding soft serve",
+                // "mixing in oreos",
+                // "mixing in cookie dough",
+                // "A blizzard with plain oreos and medium-sized chunks of cookie dough."
+                var yummyTreat = new Blizzard();
             });
         </script>
     </head>
     <body>
-        <div id="foo"></div>
     </body>
 </html>
