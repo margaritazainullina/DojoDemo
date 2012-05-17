@@ -5,7 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js" data-dojo-config="parseOnLoad: false"></script>
         <script type="text/javascript">
-            require(["dojo/query", "dojo/on", "dojo/dom", "dojo/_base/event", "dojo/dom-style", "dojo/_base/fx","dojo/domReady!"], 
+            require(["dojo/query", "dojo/on", "dojo/dom", "dojo/_base/event", 
+                "dojo/dom-style", "dojo/_base/fx", "dojo/domReady!"], 
             function(query, on, dom, event, domStyle, baseFx) {
                 var btn = query(".btn-slide");
                 on(btn,"click",function(e){
