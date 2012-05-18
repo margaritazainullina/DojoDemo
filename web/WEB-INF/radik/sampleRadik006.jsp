@@ -9,27 +9,30 @@
                     { location: "../dijit", name: "dijit" },
                     { location: "../dojox", name: "dojox" },
                     { location: ".",        name: "dojo"  },                        
-                    { location: "/dojo/js/sample", name: "sample" }
-                ]
-            };
+                    { location: "/dojo/js/sample", name: "sample" } ]};
         </script>
         <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js"></script>
         <script>
-            require(["dojo/query", "dojo/domReady!"], 
-            function(query) {
-                var nodeList = query(".pane .delete");
-                console.log(nodeList.length);
+            require(["dojo/dom", "dojo/_base/lang", "dojo/dom-style", "dojo/_base/fx", "dojo/query", "dojo/domReady!"], 
+            function(dom, lang, domStyle, fx, query) {
+                query(".pane .delete").on("click", function(e){
+                    var animation = fx.fadeOut({ 
+                        node:this.parentNode,
+                        duration:1000,
+                        onEnd:lang.partial(domStyle.set, this.parentNode, "display", "none" )
+                    });
+                    animation.play();
+                });
             });
         </script>
         <!--script type="text/javascript">
             dojo.addOnLoad(function(){
                 dojo.query(".pane .delete").connect("onclick",function(){
-                    dojo.fadeOut({node:this.parentNode, duration:1000, onEnd: dojo.partial(dojo.style, this.parentNode, "display", "none")}).play();
+                    dojo.fadeOut({node:this.parentNode, duration:1000, 
+                    onEnd: dojo.partial(dojo.style, this.parentNode, "display", "none")}).play();
                 });
             });
         </script-->
-
-
         <style type="text/css">
             body {
                 margin: 10px auto;
@@ -58,7 +61,7 @@
         </style>        
     </head>
     <body>
-        <div class="pane">
+        <div class="pane" id="a22">
             <h3>Sample heading</h3>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, enim massa gravida metus, commodo lacinia massa diam vel eros. Proin eget urna. Nunc fringilla neque vitae odio. Vivamus vitae ligula.</p>
             <img src="images/btn-delete.gif" alt="delete" class="delete" />
