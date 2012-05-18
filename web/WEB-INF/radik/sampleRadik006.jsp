@@ -13,9 +13,9 @@
         </script>
         <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dojo/dojo.js"></script>
         <script>
-            require(["dojo/dom", "dojo/_base/lang", "dojo/dom-style", "dojo/_base/fx", "dojo/query", "dojo/domReady!"], 
-            function(dom, lang, domStyle, fx, query) {
-                query(".pane .delete").on("click", function(e){
+            require(["dojo/_base/lang", "dojo/dom-style", "dojo/_base/fx", "dojo/query", "dojo/domReady!"], 
+            function(lang, domStyle, fx, query) {
+                query(".pane .delete").on("click", function(){
                     var animation = fx.fadeOut({ 
                         node:this.parentNode,
                         duration:1000,
@@ -25,14 +25,6 @@
                 });
             });
         </script>
-        <!--script type="text/javascript">
-            dojo.addOnLoad(function(){
-                dojo.query(".pane .delete").connect("onclick",function(){
-                    dojo.fadeOut({node:this.parentNode, duration:1000, 
-                    onEnd: dojo.partial(dojo.style, this.parentNode, "display", "none")}).play();
-                });
-            });
-        </script-->
         <style type="text/css">
             body {
                 margin: 10px auto;
